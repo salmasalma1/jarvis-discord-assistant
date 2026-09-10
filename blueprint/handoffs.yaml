@@ -1,0 +1,31 @@
+# ===== عقود التسليم بين اللينيات (JARVIS يتأكد أنها بتتحقق) =====
+# كل بند: سلمه اللين A للين B — لو commit خاص به دخل مسار غلط أو اتأخر -> تنبيه.
+handoffs:
+  T1_to_T2:
+    from: T1
+    to: T2
+    artifacts:
+      - Vision Pipeline v1
+      - Click/Type Executor
+      - Playwright Browser Adapter
+      - Desktop Apps Executor
+      - Popup Handling
+    contract: "ProposedAction (bounding boxes normalized, typed)"
+  T2_to_T3:
+    from: T2
+    to: T3
+    artifacts:
+      - TaskRequest Schema
+      - ProposedAction Format
+      - AgentState Serialization
+      - Status Events Format
+    contract: "Pydantic schemas frozen before execution"
+  T3_to_T2:
+    from: T3
+    to: T2
+    artifacts:
+      - WebSocket Event Stream
+      - Safety Gate API
+      - Approval Modal Flow
+      - Checkpoint Save/Load API
+    contract: "Safety + memory interfaces responsive"

@@ -1,0 +1,23 @@
+# ===== توزيع الأدوار على الفريق =====
+lanes:
+  T1:
+    label: "Team 1"
+    name: OS Control & Perception Lane
+    members: 3
+    members_names: ["Omar Gad Mohamed", "Maryam Mohamed Metwally", "Nouran Ali Ameen"]
+    modules: [vision, tool_management, execution]
+    folder_roots: [vision/, backend/tools/, backend/execution/]
+  T2:
+    label: "Team 2"
+    name: Core Brain & Voice Gateway Lane
+    members: 2
+    members_names: ["Salma Ashraf Galal", "Mohamed Saied Elsayed"]
+    modules: [orchestrator, planning_reasoning, voice]
+    folder_roots: [backend/orchestrator/, backend/reasoning/, voice/]
+  T3:
+    label: "Team 3"
+    name: Base Platform, Safety & Data Infrastructure Lane
+    members: 3
+    members_names: ["Mohamed Mostafa Gouda", "Bassant Sherif Ahmed", "Mohamed Saied Elsayed"]
+    modules: [knowledge_rag, memory, safety, evaluation, backend]
+    folder_roots: [rag/, memory/, backend/safety/, eval/, backend/]

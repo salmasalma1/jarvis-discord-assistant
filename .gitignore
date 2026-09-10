@@ -1,0 +1,17 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.log
+data/rag_index.json
+data/sources.json
+data/knowledge/
+audio/
+uploads/
+tmp/
+*.mp3
+*.wav
+*.m4a
+*.ogg
+*.pdf

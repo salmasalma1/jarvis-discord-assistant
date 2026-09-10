@@ -1,0 +1,19 @@
+# ===== المياشونات (المواعيد مضبوطة بعد إزاحة أسبوع كما اتفقنا) =====
+# ملاحظة: الأصول كانت 06-27 Sep .. 27 Dec؛ بعد الإزاحة أصبحت بتاريخ لاحق.
+milestones:
+  - name: Contracts Frozen
+    date: "2026-09-27"
+    lane: all
+    severity: milestone
+  - name: First E2E Demo
+    date: "2026-10-25"
+  - name: Approval Flow Working
+    date: "2026-11-15"
+  - name: All Features Integrated
+    date: "2026-12-06"
+  - name: Alpha Release
+    date: "2026-12-20"
+  - name: Code Freeze
+    date: "2026-12-27"
+  - name: MVP Submission
+    date: "2027-01-03"

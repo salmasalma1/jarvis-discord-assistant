@@ -1,0 +1,53 @@
+# ===== معمارية NELLY: المصدر الحقيقي للمعرفة (JARVIS BluePrint) =====
+# كل موديول له مسار مجلد وصفة. هذي الخريطة اللي JARVIS يقارن الـ commits/PRs بها.
+project: NELLY
+description: Voice-first, vision-based autonomous Windows computer-use agent.
+layers:
+  frontend:
+    folder: frontend/
+    tools: [React, TypeScript, Tailwind, Electron/Tauri]
+    purpose: Desktop status + approval UI (FR-17, NFR-04)
+  backend:
+    folder: backend/
+    tools: [FastAPI, WebSockets, Uvicorn]
+    purpose: Real-time API, voice events, block-on-approval (FR-02, FR-12, NFR-01)
+  orchestrator:
+    folder: backend/orchestrator/
+    tools: [LangGraph]
+    purpose: Stateful control loop, verification, retry, human-interrupt (FR-03, FR-09, FR-10, FR-13)
+  voice:
+    folder: voice/
+    tools: [OpenWakeWord, Silero VAD, Faster-Whisper, Piper, CosyVoice]
+    purpose: Wake word, STT, TTS, interruption (FR-01, FR-02, NFR-03)
+  vision:
+    folder: vision/
+    tools: [OmniParser, PaddleOCR]
+    purpose: Screenshot -> UI elements, OCR, normalized boxes (FR-04, FR-09)
+  planning_reasoning:
+    folder: backend/reasoning/
+    tools: [Qwen2.5-VL, ReAct]
+    purpose: Decompose goal, pick next action from screen (FR-06, FR-07, OBJ-05)
+  tool_management:
+    folder: backend/tools/
+    tools: [Pydantic v2]
+    purpose: Validate every candidate action before OS execution (FR-07, SR-09)
+  execution:
+    folder: backend/execution/
+    tools: [Playwright, PyAutoGUI, pywin32]
+    purpose: Web + desktop input, window focus, coordinate normalization (FR-05, FR-08, NFR-06)
+  safety:
+    folder: backend/safety/
+    tools: [RiskTier, Approval Layer]
+    purpose: Risk classify + HITL approval + emergency stop (FR-11, FR-12, SR-01..SR-09)
+  memory:
+    folder: memory/
+    tools: [ChromaDB, SQLite]
+    purpose: Episodic memory + session checkpoints + resume (FR-13, FR-18, OBJ-09)
+  knowledge_rag:
+    folder: rag/
+    tools: [Qdrant, Postgres, embeddings]
+    purpose: 20-stage ingestion + retrieval (FR-18)
+  evaluation:
+    folder: eval/
+    tools: [LangSmith, benchmark harness]
+    purpose: TSR, grounding, recovery, latency, safety (OBJ-10)
